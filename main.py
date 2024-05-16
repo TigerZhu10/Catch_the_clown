@@ -9,6 +9,8 @@ WINDOW_HEIGHT = 400 #y
 
 score = 0
 lives = 5
+FPS = 30
+clock = pygame.time.Clock()
 
 display_surface = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
 pygame.display.set_caption("Catch the Clown!")
@@ -39,15 +41,37 @@ clown_image = pygame.image.load("clown.png")
 clown_rect = clown_image.get_rect()
 clown_rect.center = (WINDOW_WIDTH//2,WINDOW_HEIGHT//2)
 
+clown_speed = 5
+clown_direction = random.choice([1,-1])
+clown_speed = clown_speed * clown_direction
 
-
-
+Choice = random.choice([1,0])
 
 game_running = True
 while game_running:
     for ev in pygame.event.get():
         if ev.type == pygame.QUIT:
             game_running = False
+
+    clown_rect.x += clown_speed
+
+    if Choice == 1:
+        clown_rect.y += clown_speed
+    else:
+        clown_rect.y -= clown_speed
+
+    if clown_rect.right >= WINDOW_WIDTH:
+        
+        
+    if clown_rect.bottom >= WINDOW_HEIGHT:
+    
+    if clown_rect.left <= 0:
+
+    if clown_rect.top <= 0:
+
+
+
+    
 
     display_surface.blit(back_ground, (0, 0)) #背景图片
     display_surface.blit(title_text, title_text_rect) #title
@@ -56,5 +80,6 @@ while game_running:
     display_surface.blit(clown_image, clown_rect) #clown
 
     pygame.display.update()
+    clock.tick(FPS)
 
 pygame.quit()
