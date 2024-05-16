@@ -45,6 +45,9 @@ clown_speed = 5
 clown_direction = random.choice([1,-1])
 clown_speed = clown_speed * clown_direction
 
+dx = clown_speed
+dy = clown_speed
+
 Choice = random.choice([1,0])
 
 game_running = True
@@ -53,22 +56,21 @@ while game_running:
         if ev.type == pygame.QUIT:
             game_running = False
 
-    clown_rect.x += clown_speed
+    clown_rect.x += dx
 
     if Choice == 1:
-        clown_rect.y += clown_speed
+        clown_rect.y += dy
     else:
-        clown_rect.y -= clown_speed
+        clown_rect.y -= dy
 
     if clown_rect.right >= WINDOW_WIDTH:
-        
-        
+        dx = -dx
     if clown_rect.bottom >= WINDOW_HEIGHT:
-    
+        dy = -dy
     if clown_rect.left <= 0:
-
+        dx = -dx
     if clown_rect.top <= 0:
-
+        dy = -dy
 
 
     
