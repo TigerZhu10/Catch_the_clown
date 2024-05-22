@@ -56,6 +56,10 @@ while game_running:
         if ev.type == pygame.QUIT:
             game_running = False
 
+        if ev.type == pygame.MOUSEBUTTONDOWN and ev.button == 1: 
+                if clown_rect.collidepoint(ev.pos):
+                    print("Clown clicked!")
+
     clown_rect.x += dx
 
     if Choice == 1:
