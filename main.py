@@ -56,9 +56,18 @@ while game_running:
         if ev.type == pygame.QUIT:
             game_running = False
 
-        if ev.type == pygame.MOUSEBUTTONDOWN and ev.button == 1: 
-                if clown_rect.collidepoint(ev.pos):
-                    print("Clown clicked!")
+        if ev.type == pygame.MOUSEBUTTONDOWN and ev.button == 1:
+            if clown_rect.collidepoint(ev.pos):
+                score += 1
+                score_text = score_font.render("Score: " + str(score), True, (239,247,5))
+                clown_speed += 5
+            else:
+                lives -= 1
+                lives_text = lives_font.render("Lives: " + str(lives), True, (239,247,5))
+                if lives < 0:
+                    #卡程序写在这儿
+                    print()
+                    
 
     clown_rect.x += dx
 
@@ -66,6 +75,7 @@ while game_running:
         clown_rect.y += dy
     else:
         clown_rect.y -= dy
+        
 
     if clown_rect.right >= WINDOW_WIDTH:
         dx = -dx
