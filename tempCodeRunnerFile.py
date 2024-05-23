@@ -1,3 +1,2 @@
- # if Choice == 1:
-    #     clown_rect.y += clown_speed
-    # if Choice == 0:
+while pause:
+        #     display_surface.blit(reset_text, reset_text_rect)
