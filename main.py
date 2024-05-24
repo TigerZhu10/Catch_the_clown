@@ -91,7 +91,8 @@ while game_running:
                             if ev.type == pygame.MOUSEBUTTONDOWN:
                                 back_music.play(-1)
                                 clown_rect.center = (WINDOW_WIDTH//2,WINDOW_HEIGHT//2)
-                                clown_speed = 5
+                                dx = 5
+                                dy = 5
                                 score = 0
                                 lives = 5
                                 score_text = score_font.render("Score: " + str(score), True, (239,247,5))
