@@ -97,7 +97,6 @@ while game_running:
                                 lives = 5
                                 score_text = score_font.render("Score: " + str(score), True, (239,247,5))
                                 lives_text = lives_font.render("Lives: " + str(lives), True, (239,247,5))
-                                display_surface.blit(clown_image, clown_rect)
                                 pause = False
                             if ev.type == pygame.QUIT:
                                 game_running = False
