@@ -104,7 +104,6 @@ while game_running:
 
                         pygame.display.update()
 
-                    
 
     clown_rect.x += dx
 
